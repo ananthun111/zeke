@@ -3,7 +3,8 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    banners = Banners.objects.all()
+    return render(request, 'index.html',{'banners':banners})
 def about(request):
     return render(request, 'about.html')
 def shop(request):
