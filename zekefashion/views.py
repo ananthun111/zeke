@@ -4,7 +4,10 @@ from .models import *
 
 def index(request):
     banners = Banners.objects.all()
-    return render(request, 'index.html',{'banners':banners})
+    product = Product.objects.all()
+    categorys = Home_page_category.objects.all()
+    offers = Home_page_offer.objects.all() 
+    return render(request, 'index.html',{'banners':banners ,'categorys':categorys,'offers':offers,'products':product})
 def about(request):
     return render(request, 'about.html')
 def shop(request):
